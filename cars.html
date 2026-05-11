@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Cars Inventory</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/cars.css">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="cars-header">
+ <nav class="nav"> 
+  <div class="container nav__container">
+
+    <div class="row nav__row">
+
+      <!-- LOGO -->
+      <div class="nav__logo">
+        <img src="assets/images/ui/logo.png" class="logo">
+      </div>
+
+      <!-- MENU -->
+      <div class="nav__bar">
+        <div class="nav__menu">
+          <a href="index.html">Home</a>
+          <a href="cars.html">Find your car</a>
+          <a class="btn" onclick="openContact(); contactmodal_funtion()">Contact</a>
+        </div>
+        <button class="nav__icon" onclick="toggleMenu()">☰</button>
+      </div>
+
+    </div>
+
+    <!-- POPUP -->
+    <div class="nav__overlay" onclick="toggleMenu()"></div>
+
+    <div class="nav__popup">
+      <button class="close-btn" onclick="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 512 512">
+          <path d="M502.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-96-96c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L402.7 224H192c-17.7 0-32 14.3-32 32s14.3 32 32 32h210.7l-41.4 41.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l96-96zM160 96c17.7 0 32-14.3 32-32s-14.3-32-32-32H96C43 32 0 75 0 128v256c0 53 43 96 96 96h64c17.7 0 32-14.3 32-32s-14.3-32-32-32H96c-17.7 0-32-14.3-32-32V128c0-17.7 14.3-32 32-32h64z"/>
+        </svg>
+      </button>
+      <a href="index.html" class="nav__popup-link">Home</a>
+      <a class="nav__popup-link">Find your car</a>
+      <a class="nav__popup-link" onclick="openContact(); contactmodal_funtion()">Contact</a>
+    </div>
+
+  </div>
+ </nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="cars-hero">
+  <div class="container">
+
+    <h3 class="cars-title">Find your dream car</h3>
+
+    <!-- BUSCADOR -->
+    <div class="hero-search__btn hero-search__btn--icon">
+      <input 
+        type="text"  
+        placeholder="Search by Model, Make or Keyword"  
+        id="searchInput"  
+        class="search-input"
+      />
+      <button class="search-btn" onclick="applyFilters()">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FILTROS ================= -->
+<section class="inventory__filter container">
+  <h2>Filters</h2>
+  <select id="brandFilter" onchange="applyFilters()"></select>
+  <select id="priceFilter" onchange="applyFilters()"></select>
+  <select id="sortOrderFilter" onchange="applyFilters()"></select>
+  <select id="yearSort" onchange="applyFilters()"></select>
+</section>
+
+<!-- ================= INVENTORY ================= -->
+<section class="inventory">
+  <div class="container inventory__container">
+
+    <div class="row inventory__row">
+      <!-- Cards generadas por JS -->
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= MODAL (DEBE IR AQUÍ, FUERA DE TODO) ================= -->
+<!--==contact-modal_funtion==-->
+<div class="contact-modal" id="contactModal">
+  <div class="contact-modal__content" id="email-contact"></div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row footer__row">
+      <div class="footer__col">
+        <p>© 2026 NY Car Subscription Platform — Proyecto FES</p>
+        <p>Created by Magdalena Batres Campos</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/cars.js"></script>
+<script src="assets/js/script.js"></script>
+
+</body>
+</html>
