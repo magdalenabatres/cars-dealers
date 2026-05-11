@@ -28,8 +28,8 @@ function applyFilters() {
   // 1. SEARCH GLOBAL (desde cars.html)
   const query = document.getElementById("searchInput").value.toLowerCase() || "";
   if (query) {
-     brandFilter.value = "";   // limpia la marca
-    console.log("Applying search filter with query:", query);
+     brandFilter.value = ""; 
+    
     results = results.filter(car =>
       car.brand.toLowerCase().includes(query) ||
       car.model.toLowerCase().includes(query) ||
@@ -42,7 +42,7 @@ function applyFilters() {
   // 2. BRAND FILTER (REGLA PRINCIPAL)
   const brand = document.getElementById("brandFilter").value;
   if (brand && brand !== "") {
-    console.log("Applying brand filter with brand:", brand);
+    
     results = results.filter(car => car.brand === brand);
     
   }
@@ -50,7 +50,7 @@ function applyFilters() {
   // 3. PRICE FILTER
   const price = document.getElementById("priceFilter").value;
   if (price && price !== "") {
-    console.log("Applying price filter with price:", price);
+    
     const [min, max] = price.split("-").map(Number);
     results = results.filter(car => car.price >= min && car.price <= max);
   }
@@ -58,18 +58,18 @@ function applyFilters() {
   // 4. YEAR FILTER
   const year = document.getElementById("yearSort").value;
   if (year && year !== "") {
-    console.log("Applying year filter with year:", year);
+    
     results = results.filter(car => car.year === parseInt(year));
   }
 
   // 5. SORT ORDER (A-Z / Z-A)
     const order = document.getElementById("sortOrderFilter").value;
   if (order === "A-Z" && order !== "all") {
-     console.log("Applying sort order filter with order A-Z:", order); 
+     
     results.sort((a, b) => a.model.localeCompare(b.model));
   }
   if (order === "Z-A" && order !== "all") {
-      console.log("Applying sort order filter with order Z-A:", order);
+      
     results.sort((a, b) => b.model.localeCompare(a.model));
   }
 

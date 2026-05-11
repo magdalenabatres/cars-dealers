@@ -461,48 +461,7 @@ align-items: center;
   text-align: center;
 }
 
-/*FILTERS CONTAINER*/
-.inventrory__filter {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.8);
-  margin-bottom: 25px;
-}
 
-.inventrory__filter h2{
-  font-size: 22px;
-  margin-bottom: 15px;
-  font-weight: 600;
-  color: #333;
-}
-
-/* Grid selector */
-
-.inventrory__filter select {
-  width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 12px;
-  border: 1px solid #dcdcdc;
-  border-radius: 8px;
-  background: #fafafa;
-  font-size: 15px;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
-
-.inventory-filter select:focus {
-  border-color: #007bff;
-  background: #e6f0ff;
-  outline: none;
-}
-
-/* HIVER */
-.inventory-filter select:hover {
-  border-color: #999;
-  background: #f0f8ff;
-}
- 
 
 /* == CONTAC MODAL =====*/
 
@@ -631,6 +590,7 @@ from { opacity: 0; transform: scale(0.95);}
   .nav__icon {
     display: block;
   }
+  
 }
 
 /* Animación suave */
