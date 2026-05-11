@@ -45,60 +45,35 @@
 
 /* ================= FILTROS ================= */
 .inventory__filter {
-  margin-top: 10px;
-  display: flex;
-  gap: 12px;
-  justify-content:center;
-  flex-wrap: wrap;
-   border-radius: 12px;
-     box-shadow: 0 4px 12px rgba(0,0,0,0.8);
-  margin-bottom: 25px;
-}
-
-
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  align-items: center;
+  padding: 10px;
+  
+  align-items: start;
+  width: 80%;
+  max-width: 1200px;
+  margin: 0 auto;
+  }
+ 
 
 .inventory__filter select {
-  padding: 22px;
-  border-radius: 8px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  justify-self:  center;
-
+ font-size: 16px;
+ padding: 10px;
+ border-radius: 8px;
+ border: 1px solid #ccc;
+ background-color: #f8f9fa;
 }
 
-section.inventory__filter.container {
-  max-width: 1000px; /* iguala el ancho del grid */
-  margin: 0 auto; /* centra horizontalmente */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  background: #ffffff;
-  padding: 15px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.inventrory__filter h2{
-  font-size: 22px;
-  margin-bottom: 15px;
-  font-weight: 600;
-  color: #333;
+.inventory__filter h2 {
+grid-column: 1/-1;
+margin-bottom: 8px;
+text-align: left;
 }
 
 /* Grid selector */
 
-.inventrory__filter select {
-  width: 100%;
-  padding: 12px 14px;
-  margin-bottom: 12px;
-  border: 1px solid #dcdcdc;
-  border-radius: 8px;
-  background: #fafafa;
-  font-size: 15px;
-  transition: all 0.2s ease;
-  cursor: pointer;
-}
 
 .inventory__filter select:focus {
   border-color: #007bff;
@@ -137,10 +112,13 @@ section.inventory__filter.container {
   overflow: hidden;
 }
 
-.carscontainer {
+.inventory__row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap:10px;
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+  padding: 20px 0;
 }
 
 
@@ -198,64 +176,36 @@ section.inventory__filter.container {
 
 
 
+
 @media (max-width: 768px) {
 
-    /* NAV */
-    nav {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
+ 
+  .inventory__filter select {
+    width: 80%;
+  }
+  /* NAV */
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  .inventory__filter {
+    grid-template-columns: 1fr; /* apila los filtros */
+    gap: 12px;
+  }
 
-    nav a {
-        font-size: 16px;
-        padding: 8px 0;
-    }
+  .inventory__filter select,
+  .inventory__filter input {
+    width: 80%;
+    font-size: 16px;
+    padding: 10px;
+  }
 
-    /* FILTROS */
-     .filters {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        padding: 10px;
-        width: 100%;
-    }
-
-    .filters select,
-    .filters input {
-        width: 100%;
-        font-size: 16px;
-        padding: 10px;
-    }
-
-    /* GRID DE AUTOS */
-    .cars-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 10px;
-    }
-
-    .car-card {
-        width: 100%;
-    }
-
-    .car-card img {
-        width: 100%;
-        height: auto;
-    }
+   
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-    .cars-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-@media (max-width: 1024px) {
-  .cars-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (min-width: 769px) {
+  .inventory__filter {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
-

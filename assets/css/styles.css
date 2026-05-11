@@ -499,12 +499,7 @@ align-items: center;
   top: 12px;
   right: 12px;
   color: #000;
- /* float: right;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  color: #000; /* cambia según tu diseño */
+
  }
 
  .close-contact svg {
@@ -561,10 +556,7 @@ from { opacity: 0; transform: scale(0.95);}
 
 /* RESPONSIVE GRID */
 @media (max-width: 768px) {
-  .inventrory__filter{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  }
+  
 
 .inventory-filter h2{
   grid-column: span 4;
