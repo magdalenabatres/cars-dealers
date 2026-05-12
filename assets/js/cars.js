@@ -116,7 +116,7 @@ function populateBrandFilter() {
 
   // Obtener marcas únicas
   const brands = [...new Set(cars.map(car => car.brand))].sort();
-  console.log("Brand",brands);
+  
   // Limpiar opciones
   brandFilter.innerHTML = `<option value="">All Brands</option>`;
 
