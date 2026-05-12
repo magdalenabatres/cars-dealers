@@ -16,7 +16,8 @@ window.searchCars = function () {
     alert("Please enter a search term");
     return;
   }
-  window.location.href = `cars.html?search=${encodeURIComponent(query)}`;
+  window.location.href = `/cars.html?search=${encodeURIComponent(query)}`;
+
 };
 
 
@@ -63,13 +64,8 @@ function contact(event) {
 
   loading.classList.add("modal__overlay--visible");
 
-  emailjs
-    .sendForm(
-      'service_3q6uuo8',
-      'template_rcq3p4k',
-      event.target,
-      'DVVDqozF-3nCdhRdl'
-    )
+   emailjs.sendForm('service_3q6uuo8',
+     'template_rcq3p4k', event.target, 'DVVDqozF-3nCdhRdl')
     .then(() => {
       loading.classList.remove("modal__overlay--visible");
       success.classList.add("modal__overlay--visible");
