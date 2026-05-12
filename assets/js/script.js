@@ -80,3 +80,22 @@ function contact(event) {
       alert("The email service is temporarily unavailable. Please contact me directly at magdalena.batres@gmail.com");
     });
 }
+
+
+function loadEmailJS(callback) {
+  // Si ya está cargado, no lo cargamos otra vez
+  if (window.emailjs) {
+    callback();
+    return;
+  }
+
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+
+  script.onload = () => {
+    emailjs.init("DVVDqozF-3nCdhRdl");
+    callback();
+  };
+
+  document.body.appendChild(script);
+}

@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Mi Proyecto</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="assets/css/cars.css">
 
-
-
+<!--
 <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
 </script>
@@ -21,7 +20,7 @@
   })();
 </script>
     
-
+-->
 </head>
 <body>
 
@@ -58,7 +57,7 @@
      </button><br>
       <a class="nav__popup-link">Home</a>
       <a class="nav__popup-link"  href="cars.html">Find your car</a>
-      <a class="nav__popup-link" onclick="openContact(); contactmodal_funtion()">Contact</a>
+      <a class="nav__popup-link" onclick="loadEmailJS(() => {openContact(); contactmodal_funtion();})">Contact</a>
     </div>
   <!-- <div class="nav__overlay" onclick="toggleMenu()"></div>-->
 

@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>Cars Inventory</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/styles.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+ <link rel="stylesheet" href="assets/css/styles.css">
  <link rel="stylesheet" href="assets/css/cars.css">
 </head>
 
@@ -52,7 +52,7 @@
       </button>
       <a href="index.html" class="nav__popup-link">Home</a>
       <a class="nav__popup-link">Find your car</a>
-      <a class="nav__popup-link" onclick="openContact(); contactmodal_funtion()">Contact</a>
+      <a class="nav__popup-link" onclick="loadEmailJS(() => { openContact(); contactmodal_funtion(); })">Contact</a>
     </div>
 
   </div>
@@ -120,7 +120,23 @@
 </footer>
 
 
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+
+<script type="text/javascript">
+  (function(){
+    emailjs.init({
+      publicKey: "DVVDqozF-3nCdhRdl",
+    });
+  })();
+</script>
+
 <script src="assets/js/script.js"></script>
 <script src="assets/js/cars.js"></script>
+
+
+
 </body>
 </html>
